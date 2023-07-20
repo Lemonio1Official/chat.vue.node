@@ -1,0 +1,100 @@
+.auth {
+  @include absCenter;
+  min-width: 320px;
+  padding: 10px;
+  margin: 0 auto;
+  background: linear-gradient(145deg, $dBlue, $dCyan);
+  border-radius: 5px;
+  .title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    label {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 16px;
+      margin-bottom: 10px;
+      .showPass {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 14px;
+        padding: 2px;
+        cursor: pointer;
+      }
+      input {
+        margin-top: 4px;
+        font-size: 16px;
+        background: #0002;
+        padding: 1px 4px;
+        padding-top: 5px;
+        border-bottom: 2px solid #0000;
+        transition: 0.2s;
+        &:focus {
+          border-bottom: 2px solid $lCyan;
+        }
+      }
+      b {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 16px;
+        font-weight: normal;
+        color: $red;
+        font-family: "Cabin", sans-serif;
+        font-size: 14px;
+        text-shadow: 1px 1px 0 #0009;
+        letter-spacing: 0.5px;
+      }
+      &:first-child {
+        span {
+          margin-top: 4px;
+          display: flex;
+          align-items: center;
+          s {
+            @include flex-center;
+            text-decoration: none;
+            background: #444;
+            width: 24px;
+            height: 24px;
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+          }
+          input {
+            margin-top: 0;
+            width: 100%;
+          }
+        }
+      }
+    }
+    button {
+      position: relative;
+      padding: 10px 0 5px;
+      background: $lBlue;
+      font-size: 20px;
+      margin-top: 32px;
+      @include btn($lBlue_75, $lCyan, bg);
+      .backErr {
+        width: max-content;
+        max-width: 240px;
+        position: absolute;
+        bottom: calc(100% + 4px);
+        left: 50%;
+        transform: translate(-50%);
+        font-size: 16px;
+        padding: 3px 4px 1px;
+        background: $red;
+      }
+    }
+    .actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+    }
+  }
+}

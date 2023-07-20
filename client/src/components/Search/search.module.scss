@@ -1,0 +1,87 @@
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+  label {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    input {
+      width: 100%;
+      padding: 2px 4px;
+      font-family: "Cabin", sans-serif;
+      background: #0002;
+      border: 1px solid #fff4;
+      margin-right: 12px;
+      border-radius: 4px;
+      transition: 0.2s;
+      &:focus {
+        box-shadow: 0 0 2px 1px $lBlue;
+      }
+    }
+  }
+  .found {
+    width: 100%;
+    margin-top: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $lCyan;
+    }
+    .empty {
+      @include flex-center;
+      width: 100%;
+      height: 50px;
+      color: $lGray;
+    }
+    li {
+      cursor: pointer;
+      position: relative;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      background: #0002;
+      margin-bottom: 2px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      i {
+        @include flex-center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: $lBlue;
+        font-style: normal;
+        font-size: 20px;
+        margin-right: 10px;
+        font-family: "Cabin", sans-serif;
+      }
+      span {
+        display: flex;
+        flex-direction: column;
+        s {
+          text-decoration: none;
+          font-size: 14px;
+          margin-top: 2px;
+          color: $lGray;
+        }
+      }
+      .lastVisit {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        font-weight: normal;
+        font-size: 14px;
+        color: $lGray;
+        &.online {
+          color: $lBlue;
+        }
+      }
+    }
+  }
+}

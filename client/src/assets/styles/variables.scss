@@ -1,0 +1,23 @@
+@import "./mixins.scss";
+
+//main
+$gray: #414141;
+$dGray: #313131;
+$lBlue: rgb(20, 160, 255);
+$lBlue_75: rgb(20, 160, 255, 0.75);
+$lBlue_15: rgb(20, 160, 255, 0.15);
+$dBlue: rgb(0, 110, 190);
+$dBlue_75: rgb(0, 110, 190, 0.75);
+$lCyan: rgb(33, 255, 100);
+$lCyan_75: rgb(33, 255, 100, 0.75);
+$dCyan: rgb(0, 140, 75);
+$orange: rgb(255, 140, 33);
+
+//form
+$red: rgb(255, 40, 40);
+$lRed: rgb(255, 60, 60);
+$dRed: rgb(230, 30, 30);
+$green: rgb(20, 255, 20);
+$lGreen: rgb(40, 255, 40);
+
+$lGray: rgba(255, 255, 255, 0.85);

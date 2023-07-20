@@ -1,0 +1,79 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 12px;
+  .settings {
+    .user {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+      .avatar {
+        @include flex-center;
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: $lBlue;
+        font-style: normal;
+        font-size: 32px;
+        margin-bottom: 16px;
+        font-family: "Cabin", sans-serif;
+      }
+      .nick {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+      .uid {
+        display: flex;
+        align-items: center;
+      }
+      em {
+        font-size: 16px;
+        color: $lGray;
+        font-family: "Cabin", sans-serif;
+        font-style: normal;
+        margin-right: 8px;
+      }
+      .edit {
+        font-size: 16px;
+        background: $lBlue_75;
+        width: 24px;
+        height: 24px;
+        margin-left: 8px;
+        border-radius: 4px;
+        cursor: pointer;
+        @include flex-center;
+        &.d {
+          background: $lCyan_75;
+        }
+      }
+      input {
+        font-size: 16px;
+        padding: 4px 4px 2px;
+        margin: 0 4px;
+        background: #0002;
+        width: 150px;
+        &.uidInp {
+          width: 138px;
+        }
+      }
+    }
+    .logout {
+      text-align: center;
+      padding: 8px 0 4px;
+      background: #fff2;
+      user-select: none;
+      transition: 0.2s;
+      &:hover {
+        background: $red;
+      }
+      &:active {
+        background: #fff2;
+        color: $red;
+      }
+    }
+  }
+}

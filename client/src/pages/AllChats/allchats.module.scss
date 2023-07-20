@@ -1,0 +1,99 @@
+.allchats {
+  display: flex;
+  flex-direction: column;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #0002;
+    cursor: pointer;
+    .profile {
+      display: flex;
+      align-items: center;
+      i {
+        @include flex-center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $lBlue;
+        font-style: normal;
+        font-size: 22px;
+        margin-right: 10px;
+        font-family: "Cabin", sans-serif;
+      }
+      span {
+        font-size: 18px;
+      }
+    }
+    .settings {
+      @include flex-center;
+      @include btn($lBlue, $lCyan);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 22px;
+      cursor: pointer;
+    }
+  }
+  .chats {
+    display: flex;
+    flex-direction: column;
+    .item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+      padding: 8px;
+      background: #0002;
+      cursor: pointer;
+      transition: 0.2s;
+      .userIco {
+        @include flex-center;
+        min-width: 35px;
+        min-height: 35px;
+        border-radius: 50%;
+        background: $lCyan;
+        font-style: normal;
+        font-size: 20px;
+        margin-right: 10px;
+        font-family: "Cabin", sans-serif;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+        s {
+          width: calc(100vw - 100px);
+          text-decoration: none;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-family: "Cabin", sans-serif;
+          font-size: 14px;
+          color: $lGray;
+        }
+      }
+      .time {
+        display: flex;
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        color: $lGray;
+        font-size: 14px;
+        i {
+          margin-right: 8px;
+          &.dn {
+            display: none;
+          }
+          &.checked {
+            color: $lBlue;
+          }
+        }
+      }
+      &:hover {
+        background: #0003;
+        box-shadow: 0 1px 0 0 #0006, 0 -1px 0 0 #0006;
+      }
+    }
+  }
+}

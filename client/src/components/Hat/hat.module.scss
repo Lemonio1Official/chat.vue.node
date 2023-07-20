@@ -1,0 +1,49 @@
+.hat {
+  position: relative;
+  display: flex;
+  background: #0002;
+  .back {
+    font-size: 20px;
+    color: $lGray;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    padding: 4px 12px;
+    cursor: pointer;
+    i {
+      @include flex-center;
+      min-width: 30px;
+      min-height: 30px;
+      border-radius: 50%;
+      background: $lCyan;
+      font-style: normal;
+      font-size: 18px;
+      margin-right: 5px;
+      font-family: "Cabin", sans-serif;
+    }
+    span {
+      width: 100px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-top: 4px;
+      font-size: 14px;
+      s {
+        font-size: 12px;
+        text-decoration: none;
+        color: $lGray;
+        padding: 0 2px;
+        &.online {
+          color: $lBlue;
+        }
+      }
+    }
+  }
+  .asTitle {
+    @include absCenter;
+  }
+}

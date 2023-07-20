@@ -1,0 +1,198 @@
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 42px);
+  padding: 5px;
+  .chatZone {
+    display: flex;
+    flex: 1;
+    background: url(https://brunty.me/files/chat-bgs/1.0/blue-pink-20-pct.png);
+    background-size: 150%;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    ul {
+      width: 100%;
+      height: max-content;
+      li {
+        list-style: none;
+        width: max-content;
+        min-width: 30%;
+        max-width: 75%;
+        font-size: 16px;
+        background: #333;
+        margin: 4px 0;
+        padding: 6px 4px 0px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        word-break: break-all;
+        white-space: pre-wrap;
+        white-space: -moz-pre-wrap;
+        white-space: -pre-wrap;
+        white-space: -o-pre-wrap;
+        cursor: pointer;
+        &.mine {
+          margin-left: auto;
+          background: linear-gradient(165deg, #333 40%, $dBlue_75);
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        span {
+          display: block;
+          width: max-content;
+          padding: 0 4px;
+          margin-left: auto;
+          font-size: 12px;
+          color: $lGray;
+          font-family: "Cabin", sans-serif;
+          i {
+            margin-left: 4px;
+            &.checked {
+              color: $lBlue;
+              text-shadow: 1px 1px 1px #0009;
+            }
+          }
+        }
+      }
+    }
+  }
+  .sendZone {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-height: 72px;
+    background: #0002;
+    textarea {
+      background: none;
+      width: 100%;
+      max-height: 72px;
+      resize: none;
+      font-size: 14px;
+      font-family: "Cabin", sans-serif;
+      padding: 2px 4px;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+    .send {
+      @include flex-center;
+      height: 32px;
+      width: 48px;
+      cursor: pointer;
+      @include btn($lBlue, $dBlue, bg);
+    }
+  }
+  .messActions {
+    position: absolute;
+    left: -100%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    background: $gray;
+    box-shadow: 0 0 2px 1px #0005;
+    border-radius: 5px;
+    overflow: hidden;
+    span {
+      display: flex;
+      width: 120px;
+      font-family: "Cabin", sans-serif;
+      padding: 4px 10px 6px;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        background: $lBlue_15;
+      }
+      i {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+.deletePopup {
+  width: 300px;
+  @include absCenter;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 8px;
+  background: $gray;
+  border-radius: 4px;
+  label {
+    margin-bottom: 16px;
+    cursor: pointer;
+    user-select: none;
+    input {
+      position: relative;
+      margin-right: 8px;
+      cursor: pointer;
+      &::before {
+        @include absCenter;
+        content: "";
+        width: 16px;
+        height: 16px;
+        background: #eee;
+        border-radius: 4px;
+      }
+      &::after {
+        @include absCenter;
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: #0000;
+        border-radius: 2px;
+        transition: 0.1s;
+      }
+      &:checked::after {
+        background: $lBlue;
+      }
+    }
+  }
+  div {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    button {
+      position: relative;
+      padding: 6px 20px;
+      font-family: "Cabin", sans-serif;
+      font-size: 16px;
+      border-radius: 4px;
+      text-shadow: 1px 1px #0009;
+      font-weight: 500;
+      background: linear-gradient($lRed, $red);
+      box-shadow: 0 5px 0 0 #0008;
+      transition: 0.2s;
+      &::before {
+        @include absCenter;
+        content: "";
+        width: calc(100% - 5px);
+        height: calc(100% - 5px);
+        background: linear-gradient(#fff4, #0000);
+        border-radius: 4px;
+      }
+      &:first-child {
+        background: linear-gradient($lGreen, $green);
+      }
+      &:hover {
+        transform: translateY(3px);
+        box-shadow: 0 2px 0 0 #0008;
+      }
+      &:active {
+        background: $dBlue;
+      }
+    }
+  }
+}
+.blockBG {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0002;
+}

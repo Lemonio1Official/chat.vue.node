@@ -1,0 +1,63 @@
+.uprofile {
+  padding: 8px;
+  .user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0 20px;
+    .avatar {
+      @include flex-center;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: $lBlue;
+      font-style: normal;
+      font-size: 32px;
+      margin-bottom: 16px;
+      font-family: "Cabin", sans-serif;
+    }
+    .uid {
+      color: $lGray;
+      font-size: 18px;
+    }
+    .visit {
+      margin-top: 8px;
+      font-family: "Cabin", sans-serif;
+      font-size: 14px;
+      color: $lGray;
+      s {
+        text-decoration: none;
+      }
+      &.online {
+        color: $lBlue;
+        s {
+          display: none;
+        }
+      }
+    }
+  }
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 85%;
+    button {
+      width: 47.5%;
+      padding: 8px 0 4px;
+      font-size: 15px;
+      background: $lBlue;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        background: $dBlue;
+      }
+      &:last-child {
+        background: $lRed;
+        &:hover {
+          background: $dRed;
+        }
+      }
+    }
+  }
+}
